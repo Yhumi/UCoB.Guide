@@ -10,6 +10,7 @@ import Notification from '@/components/mdx/Notification.astro'
 import Button from '@/components/mdx/Button.astro'
 import BuffDebuff from '@/components/mdx/BuffDebuff.astro'
 import Card from '@/components/mdx/Card.astro'
+import NASpecific from '@/components/mdx/NASpecific.astro'
 import { YouTube } from 'astro-embed'
 
 import slashing from '../assets/icons/slashing.png'
@@ -46,11 +47,11 @@ a <BuffDebuff name="Neurolink" img={neurolink} /> debuff, which reduces damage d
 healing by approximately 10%. This debuff will be important to resolve the **Generate** mechanic
 explained later in this page.  
 
-<Notification title="NA Specific" type="primary">
+<NASpecific>
 The Neurolink puddles will need to be spread out for the resolution of mechanics in this phase and future phases.
 NA drops these puddles in a counter-clockwise order, starting from North to Southwest to Southeast. If you're using
 the recommended markers, it is on the 1, 2, and 3 markers, in order.
-</Notification>
+</NASpecific>
 
 ## HP Threshold 1 (100%-75%)
 <Card title="Mechanic Loop">
@@ -114,13 +115,13 @@ apply <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving player
   
 The second set of Liquid Hells in this mechanic loop will happen ***during*** the resolution of the Hatch. 
 
-<Notification title="NA Specific" type="primary">
+<NASpecific>
     If the Liquid Hell baiter (**physical ranged**) gets marked for a Hatch, it is common to have someone
     else (**caster**) intercept the Hatch for the baiter.  
     In conjunction with baiting Liquid Hells, positioning for this correctly without causing a death or wipe can be 
     tricky. Check out this useful video that will help you prepare for this!
-<YouTube id="9DDTla_pbL0" />
-</Notification>
+    <YouTube id="9DDTla_pbL0" />
+</NASpecific>
 
 
 ## HP Threshold 3 (44.9%-0.1%)
