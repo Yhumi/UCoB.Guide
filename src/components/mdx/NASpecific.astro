@@ -1,0 +1,13 @@
+---
+import Notification from './Notification.astro'
+
+interface Props {
+  class?: string;
+}
+
+const props = Astro.props;
+---
+
+<Notification title="NA Specific" type="primary" class={props.class}>
+    <slot />
+</Notification>
