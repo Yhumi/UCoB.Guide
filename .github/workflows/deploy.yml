@@ -14,6 +14,7 @@ jobs:
     permissions:
       deployments: write
     runs-on: ubuntu-latest
+    environment: ucob.guide
     steps:
       - name: Setup SSH and Deploy on VPS
         uses: appleboy/ssh-action@master
