@@ -32,4 +32,4 @@ jobs:
             git pull
             yarn install
             yarn build
-            rsync -a dist/ ${{ vars.SITE_DIR }}
+            rsync -r dist/ ${{ vars.SITE_DIR }}
