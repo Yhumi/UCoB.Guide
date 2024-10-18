@@ -40,11 +40,11 @@ thresholds are:
 <Button class="btn btn-primary-light" href="#h-hp-threshold-1-100-75">100%-75%</Button>
 <Button class="btn btn-secondary-light" href="#h-hp-threshold-2-749-45">74.9%-45%</Button>
 <Button class="btn btn-highlighter" href="#hp-threshold-3-449-01">44.9%-0.1%</Button>  
-**Neurolink** - Small puddle that is dropped under the center of of Twintania's hitbox
+**Neurolink** - Small puddle that is dropped under the center of Twintania's hitbox
 upon hitting a HP threshold  
 When a player steps into the Neurolink, the player gets
 a <BuffDebuff name="Neurolink" img={neurolink} /> debuff, which reduces damage done by approximately 90% and
-healing by approximately 10%. This debuff will be important to resolve the **Generate** mechanic
+healing done by approximately 10%. This debuff will be required to resolve the **Generate** mechanic
 explained later in this page.  
 
 <NASpecific>
@@ -62,20 +62,22 @@ the recommended markers, it is on the 1, 2, and 3 markers, in order.
 </Card>
 
 - **Plummet** - Conal physical mini-tankbuster aimed at the player that is highest in aggro  
-Take care to face the plummet away from the party or even rogue players that may be standing too close.   
+Take care to face the plummet away from the party or even rogue players that may be standing in the cleaved area.   
   
 - **Twister** - Drops small tornadoes (Twisters) under 4 players near the end of the cast  
 If a player touches a Twister, it will immediately kill the player who touched the Twister. Additionally,
 any players within the vicinity of the Twister will take lethal damage and be knocked back into the wall.
+Dodge Twisters by moving away from your initial position at about 75% of the cast till the cast ends (Latency
+dependent).
   
 - **Fireball** - Targeted party stack on the telegraphed player  
 It is common to 5 stack the Fireball in the opener with 4 DPS and 1 healer to generate LB for a future phase. 
 Both tanks and 1 healer (discuss with your party) will stay out of this initial stack. Subsequent Fireball stacks
 should be stacked with as many people as possible.[^1]
   
-- **Death Sentence** - Swap tankbuster which inflicts 
+- **Death Sentence** - Tankbuster (Forced tankswap) which inflicts 
 a <BuffDebuff name="Slashing Resistance Down II" img={slashing} /> on the target  
-Twintania's autos are slashing type, so if the player that currently has 
+Forced swap as Twintania's autos are slashing type. If the player that currently has 
 the <BuffDebuff name="Slashing Resistance Down II" img={slashing} /> takes an auto, they will take lethal
 damage.
 
