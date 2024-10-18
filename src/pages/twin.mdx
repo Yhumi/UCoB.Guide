@@ -5,10 +5,12 @@ nav_order: 2
 show_toc: false
 ---
 
-import Image from 'astro:assets';
+import Image from 'astro:assets'
 import Notification from '@/components/mdx/Notification.astro'
 import Button from '@/components/mdx/Button.astro'
 import BuffDebuff from '@/components/mdx/BuffDebuff.astro'
+import Card from '@/components/mdx/Card.astro'
+import { YouTube } from 'astro-embed'
 
 import slashing from '../assets/icons/slashing.png'
 import damagedown from '../assets/icons/damagedown.png'
@@ -16,10 +18,13 @@ import neurolink from '../assets/icons/neurolink.png'
 import burns from '../assets/icons/burns.png'
 
 ## TODO
-- Add videos
-- Explanation for Neurolink debuff
+- ~~Add videos~~
+- ~~Explanation for Neurolink debuff~~
+- ~~Liquid Hells explanation~~
+- ~~Hatch explanation~~
+- Update LB Gen footnote to section specifically for fireball stack maybe
+- Check if Twintania only casts Death Sentence once during HP Thresholds 1/2
 - Proofread
-
 
 <Notification title="tl;dr">
     Neurolink placement - Normal triangle: N, SW, SE (CCW, on 123 markers)  
@@ -34,27 +39,39 @@ thresholds are:
 <Button class="btn btn-primary-light" href="#h-hp-threshold-1-100-75">100%-75%</Button>
 <Button class="btn btn-secondary-light" href="#h-hp-threshold-2-749-45">74.9%-45%</Button>
 <Button class="btn btn-highlighter" href="#hp-threshold-3-449-01">44.9%-0.1%</Button>  
-Every time a HP threshold is met, Twintania drops a small puddle, called a Neurolink, under 
-the center of her hitbox. This puddle will be important for the **Generate** mechanic, 
-explained later in this page.
+**Neurolink** - Small puddle that is dropped under the center of of Twintania's hitbox
+upon hitting a HP threshold  
+When a player steps into the Neurolink, the player gets
+a <BuffDebuff name="Neurolink" img={neurolink} /> debuff, which reduces damage done by approximately 90% and
+healing by approximately 10%. This debuff will be important to resolve the **Generate** mechanic
+explained later in this page.  
 
+<Notification title="NA Specific" type="primary">
+The Neurolink puddles will need to be spread out for the resolution of mechanics in this phase and future phases.
+NA drops these puddles in a counter-clockwise order, starting from North to Southwest to Southeast. If you're using
+the recommended markers, it is on the 1, 2, and 3 markers, in order.
+</Notification>
 
 ## HP Threshold 1 (100%-75%)
-<Notification title="Mechanic Loop" type="primary">
+<Card title="Mechanic Loop">
     - Plummet  
     - Twister  
     - Fireball  
     - Death Sentence (only once)
-</Notification>
+</Card>
 
 - **Plummet** - Conal physical mini-tankbuster aimed at the player that is highest in aggro  
 Take care to face the plummet away from the party or even rogue players that may be standing too close.   
+  
 - **Twister** - Drops small tornadoes (Twisters) under 4 players near the end of the cast  
 If a player touches a Twister, it will immediately kill the player who touched the Twister. Additionally,
 any players within the vicinity of the Twister will take lethal damage and be knocked back into the wall.
+  
 - **Fireball** - Targeted party stack on the telegraphed player  
 It is common to 5 stack the Fireball in the opener with 4 DPS and 1 healer to generate LB for a future phase. 
-Both tanks and 1 healer (discuss with your party) will stay out of this initial stack.
+Both tanks and 1 healer (discuss with your party) will stay out of this initial stack. Subsequent Fireball stacks
+should be stacked with as many people as possible.[^1]
+  
 - **Death Sentence** - Swap tankbuster which inflicts 
 a <BuffDebuff name="Slashing Resistance Down II" img={slashing} /> on the target  
 Twintania's autos are slashing type, so if the player that currently has 
@@ -63,7 +80,7 @@ damage.
 
 
 ## HP Threshold 2 (74.9%-45%)
-<Notification title="Mechanic Loop" type="secondary">
+<Card title="Mechanic Loop">
     - Liquid Hells  
     - Generate  
     - Liquid Hells  
@@ -71,24 +88,43 @@ damage.
     - Generate  
     - Twister
     - Plummet
-</Notification>
+</Card>
 
 - **Liquid Hells** - A set of 5x puddles, baited sequentially on the targeted player  
 Each puddle is a moderately-sized circle which applies <BuffDebuff name="Burns" img={burns} />, a lethal DoT,
 to any players who stand in the puddle for too long.  
 The targeted player is any single player between the radius of about 10-25 yalms. If there are multiple valid
 targets, a random player within the valid radius is chosen as the target for a single Liquid Hell.
+
 - **Generate** - Marks 1-3 players for an orb that follows the location of the player till the orb is intercepted  
+An orb is also referred to as a **Hatch**. *In this phase*, only DPS players can get marked for a Hatch.
 The number of players marked is determined by the number of Neurolinks that are currently on the arena.
 When an orb is intercepted, the orb will explode and deal lethal damage to players in the immediate vicinity who
 do not have the <BuffDebuff name="Neurolink" img={neurolink} /> debuff, attained from standing in a Neurolink.  
 Additionally, if the person who intercepted the orb does not have the <BuffDebuff name="Neurolink" img={neurolink} /> 
 debuff, the orb will further explode, dealing lethal raidwide damage and
 apply <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving players.
+  
+<Notification title="Resolving Hatches" type="notice">
+    Since the <BuffDebuff name="Neurolink" img={neurolink} /> debuff reduces damage done by the player,
+    minimizing the amount of time spent in the Neurolink is ideal. However, due to the way snapshots and latency
+    work, it is recommended to **walk into the Neurolink from the side** instead of walking into the Neurolink
+    directly towards the Hatch.
+</Notification>
+  
+The second set of Liquid Hells in this mechanic loop will happen ***during*** the resolution of the Hatch. 
+
+<Notification title="NA Specific" type="primary">
+    If the Liquid Hell baiter (**physical ranged**) gets marked for a Hatch, it is common to have someone
+    else (**caster**) intercept the Hatch for the baiter.  
+    In conjunction with baiting Liquid Hells, positioning for this correctly without causing a death or wipe can be 
+    tricky. Check out this useful video that will help you prepare for this!
+<YouTube id="9DDTla_pbL0" />
+</Notification>
 
 
 ## HP Threshold 3 (44.9%-0.1%)
-<Notification title="Mechanic Loop" type="notice">
+<Card title="Mechanic Loop">
     - Liquid Hells  
     - Generate  
     - Liquid Hells (random) + Fireball  
@@ -97,7 +133,10 @@ apply <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving player
     - Generate  
     - Twister  
     - Plummet  
-</Notification>
+</Card>
 
 - **Liquid Hells (random)** - Same as Liquid Hells, but instead of a random target within a preset range, it is
-a random single target for all 5 puddles.
+a random single target for all 5 puddles.  
+  
+  
+[^1]: If discussed with the party, [subsequent stacks can be cheesed for LB too](https://ucob.guide/general/lbgen/).
