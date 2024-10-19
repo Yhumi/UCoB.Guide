@@ -5,18 +5,22 @@ nav_order: 2
 show_toc: false
 ---
 
-import Image from 'astro:assets'
+import { Image } from 'astro:assets'
 import Notification from '@/components/mdx/Notification.astro'
 import Button from '@/components/mdx/Button.astro'
 import BuffDebuff from '@/components/mdx/BuffDebuff.astro'
 import Card from '@/components/mdx/Card.astro'
 import NASpecific from '@/components/mdx/NASpecific.astro'
 import { YouTube } from 'astro-embed'
+import Grid from '@/components/mdx/Grid.astro'
+
+import twister from '../assets/images/twister.png'
 
 import slashing from '../assets/icons/slashing.png'
 import damagedown from '../assets/icons/damagedown.png'
 import neurolink from '../assets/icons/neurolink.png'
 import burns from '../assets/icons/burns.png'
+import manahyper from '../assets/icons/manahyper.png'
 
 ## TODO
 - ~~Add videos~~
@@ -28,6 +32,9 @@ import burns from '../assets/icons/burns.png'
 - ~~Clarity regarding plummet cast and fireball marker~~
 - ~~Twister + Hatch combo~~
 - ~~Check if Twintania only casts Death Sentence once during HP Thresholds 1/2~~
+- ~~Mana hypersensitivity~~
+- Add images to break up large blocks of text
+- Change tank uptime example placeholder links to clips
 - Update LB Gen footnote to section specifically for fireball stack maybe
 - Proofread
 
@@ -71,8 +78,12 @@ the recommended markers, it is on the 1, 2, and 3 markers, in order.
     - Fireball
 </Card>
 
-- **Plummet** - Conal physical mini-tankbuster aimed at the player that is highest in aggro, no cast time    
-  
+- **Plummet** - Conal physical mini-tankbuster aimed at the player that is highest in aggro, no cast time  
+
+<div class="grid max-w-full place-content-center mt-6">
+    <Image src={twister} alt="A Twister" class="rounded-md"/>
+</div>
+
 - **Twister** - Drops small tornadoes (Twisters) under 4 players near the end of the cast  
 If a player touches a Twister, it will immediately kill the player who touched the Twister. Additionally,
 any players within the vicinity of the Twister will take lethal damage and be knocked back into the wall.
@@ -111,12 +122,17 @@ targets, a random player within the valid radius is chosen as the target for a s
 
 - **Generate** - Marks 1-3 players for an orb that follows the location of the player till the orb is intercepted  
 An orb is also referred to as a **Hatch**. *In this phase*, only DPS players can get marked for a Hatch.
-The number of players marked is determined by the number of Neurolinks that are currently on the arena.
+The number of players marked is determined by the number of Neurolinks that are currently on the arena.  
 When an orb is intercepted, the orb will explode and deal lethal damage to players in the immediate vicinity who
-do not have the <BuffDebuff name="Neurolink" img={neurolink} /> debuff, attained from standing in a Neurolink.  
-Additionally, if the person who intercepted the orb does not have the <BuffDebuff name="Neurolink" img={neurolink} /> 
-debuff, the orb will further explode, dealing lethal raidwide damage and
-applying <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving players.  
+do not have the <BuffDebuff name="Neurolink" img={neurolink} /> debuff, attained from standing in a Neurolink.
+The people in the vicinity of the explosion who survive will 
+get <BuffDebuff name="Mana Hypersensitivity" img={manahyper} /> for 16 seconds, making any Hatch-related damage
+lethal during the duration of the debuff with or without the <BuffDebuff name="Neurolink" img={neurolink} /> debuff.   
+If the person who intercepted the orb dies, usually when they do not have
+the <BuffDebuff name="Neurolink" img={neurolink} /> debuff on intercept, the orb will further explode, dealing
+lethal raidwide damage and applying <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving players.
+The same result will occur when nobody intercepts the orb when 10 seconds have passed since the end of the
+Generate cast.  
   
 The second set of Liquid Hells in this mechanic loop will happen ***during*** the resolution of the Hatch. 
 Likewise, the Twister in this set will happen during the resolution of the Hatch. See
