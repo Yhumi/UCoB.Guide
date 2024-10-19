@@ -29,7 +29,7 @@ jobs:
           script: |
             git config --global url."https://${{ secrets.PERSONAL_GITHUB_TOKEN }}:@github.com".insteadOf "https://github.com"
             cd ucob-guide/
-            git pull
+            git checkout .
             yarn install
             yarn build
             rsync -r dist/ ${{ vars.SITE_DIR }}
