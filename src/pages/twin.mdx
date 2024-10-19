@@ -13,8 +13,13 @@ import Card from '@/components/mdx/Card.astro'
 import NASpecific from '@/components/mdx/NASpecific.astro'
 import { YouTube } from 'astro-embed'
 import Grid from '@/components/mdx/Grid.astro'
+import ImageWrapper from '@/components/mdx/ImageWrapper.astro'
+import ImageWrapperSquare from '@/components/mdx/ImageWrapperSquare.astro'
 
+import neurolinkpuddle from '../assets/images/neurolink-puddle.png'
 import twister from '../assets/images/twister.png'
+import fireball from '../assets/images/fireball.png'
+import hatchresolve from '../assets/images/hatch-resolve-side.png'
 
 import slashing from '../assets/icons/slashing.png'
 import damagedown from '../assets/icons/damagedown.png'
@@ -52,6 +57,8 @@ thresholds are:
 <Button class="btn btn-primary-light" href="#h-hp-threshold-1-100-75">100%-75%</Button>
 <Button class="btn btn-secondary-light" href="#h-hp-threshold-2-749-45">74.9%-45%</Button>
 <Button class="btn btn-highlighter" href="#hp-threshold-3-449-01">44.9%-0.1%</Button>  
+
+<ImageWrapperSquare img={neurolinkpuddle} alt="Neurolink puddle" classdiv="mt-8"/>
 **Neurolink** - Small puddle that is dropped under the center of Twintania's hitbox
 upon hitting a HP threshold  
 When a player steps into the Neurolink, the player gets
@@ -80,16 +87,18 @@ the recommended markers, it is on the 1, 2, and 3 markers, in order.
 
 - **Plummet** - Conal physical mini-tankbuster aimed at the player that is highest in aggro, no cast time  
 
-<div class="grid max-w-full place-content-center mt-6">
-    <Image src={twister} alt="A Twister" class="rounded-md"/>
-</div>
+
+<ImageWrapperSquare img={twister} alt="Twister" classdiv="mt-8"/>
 
 - **Twister** - Drops small tornadoes (Twisters) under 4 players near the end of the cast  
 If a player touches a Twister, it will immediately kill the player who touched the Twister. Additionally,
 any players within the vicinity of the Twister will take lethal damage and be knocked back into the wall.
 Dodge Twisters by moving away from your initial position at about 75% of the cast till the cast ends (Latency
 dependent).
-  
+
+
+<ImageWrapperSquare img={fireball} alt="Fireball marker" classdiv="mt-8"/>
+
 - **Fireball** - Targeted party stack on marked player  
 It is common to 5 stack the Fireball in the opener with 4 DPS and 1 healer to generate LB for a future phase. 
 Both tanks and 1 healer (discuss with your party) will stay out of this initial stack. Subsequent Fireball stacks
@@ -162,13 +171,15 @@ Take care to face the plummet away from the party or even rogue players that may
 Tanks can do a lot to make the melee DPS' life a lot easier such as:
 - Standing where the other tank is standing when provoking from them, keeping the boss facing the same way
 - Positioning Twintania closer to the Neurolinks temporarily. [Example 1](example) & [Example 2](example)
-
+  
 
 ### Healer
 Some people may not stack for Fireball stacks, so be prepared to throw out a shield or mitigation.
+  
 
 ### DPS
 #### Hatches
+<ImageWrapperSquare img={hatchresolve} alt="Hatch resolution from the side" />
 Since the <BuffDebuff name="Neurolink" img={neurolink} /> debuff reduces damage done by the player,
 minimizing the amount of time spent in the Neurolink to resolve Hatches is ideal. However, due to the way
 snapshots and latency work, it is recommended to **walk into the Neurolink from the side** instead of walking
@@ -185,5 +196,7 @@ into the Neurolink directly towards the Hatch in this phase.
 
 For the Generate + Twister combo, Twister will usually go off before the orb reaches you. Make sure you drop
 the twister outside of the Neurolink to ensure your end position is safe.
-  
+
+&nbsp;
+
 [^1]: If discussed with the party, subsequent stacks can be [cheesed for LB](https://ucob.guide/general/lbgen/) too.
