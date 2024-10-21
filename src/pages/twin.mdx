@@ -20,6 +20,7 @@ import neurolinkpuddle from '../assets/images/neurolink-puddle.png'
 import twister from '../assets/images/twister.png'
 import fireball from '../assets/images/fireball.png'
 import hatchresolve from '../assets/images/hatch-resolve-side.png'
+import hatchmarker from '../assets/images/hatch-and-marker.png'
 
 import slashing from '../assets/icons/slashing.png'
 import damagedown from '../assets/icons/damagedown.png'
@@ -27,21 +28,13 @@ import neurolink from '../assets/icons/neurolink.png'
 import burns from '../assets/icons/burns.png'
 import manahyper from '../assets/icons/manahyper.png'
 
+{/*
+
 ## TODO
-- ~~Add videos~~
-- ~~Explanation for Neurolink debuff~~
-- ~~Liquid Hells explanation~~
-- ~~Hatch explanation~~
-- ~~Fix footer link~~
-- ~~Role specific section~~
-- ~~Clarity regarding plummet cast and fireball marker~~
-- ~~Twister + Hatch combo~~
-- ~~Check if Twintania only casts Death Sentence once during HP Thresholds 1/2~~
-- ~~Mana hypersensitivity~~
-- Add images to break up large blocks of text (Hatch marker and orb)
-- ~~Change tank uptime example placeholder links to clips~~
 - Update LB Gen footnote to section specifically for fireball stack maybe
 - Proofread
+
+*/}
 
 <Notification title="tl;dr">
     Neurolink placement - Normal triangle: N, SW, SE (CCW, on 123 markers)  
@@ -129,6 +122,8 @@ to any players who stand in the puddle for too long.
 The targeted player is any single player between the radius of about 10-25 yalms. If there are multiple valid
 targets, a random player within the valid radius is chosen as the target for a single Liquid Hell.
 
+<ImageWrapper img={hatchmarker} alt="The Hatch and its respective marker" classdiv="mt-8"/>
+
 - **Generate** - Marks 1-3 players for an orb that follows the location of the player till the orb is intercepted  
 An orb is also referred to as a **Hatch**. *In this phase*, only DPS players can get marked for a Hatch.
 The number of players marked is determined by the number of Neurolinks that are currently on the arena.  
@@ -138,7 +133,7 @@ The people in the vicinity of the explosion who survive will
 get <BuffDebuff name="Mana Hypersensitivity" img={manahyper} /> for 16 seconds, making any Hatch-related damage
 lethal during the duration of the debuff with or without the <BuffDebuff name="Neurolink" img={neurolink} /> debuff.   
 If the person who intercepted the orb dies, usually when they do not have
-the <BuffDebuff name="Neurolink" img={neurolink} /> debuff on intercept, the orb will further explode, dealing
+the <BuffDebuff name="Neurolink" img={neurolink} />, the orb will further explode, dealing
 lethal raidwide damage and applying <BuffDebuff name="Damage Down" img={damagedown} /> to any surviving players.
 The same result will occur when nobody intercepts the orb when 10 seconds have passed since the end of the
 Generate cast.  
