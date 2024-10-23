@@ -1,4 +1,4 @@
-name: Deploy to VPS
+name: Deploy to VPS (Preview)
 
 on:
   # Trigger the workflow every time you push to the `main` branch
