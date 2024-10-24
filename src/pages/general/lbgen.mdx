@@ -6,6 +6,7 @@ show_toc: false
 ---
 import Notification from '@/components/mdx/Notification.astro'
 import Grid from '@/components/mdx/Grid.astro'
+import TwitchClip from '@/components/mdx/TwitchClip.astro'
 
 ## Understanding Active LB Generation
 <Notification title="LB Gen tl;dr">
@@ -93,6 +94,13 @@ Bahamut:
 - **Bahamut transition** (with **LB3**) - If the party has **LB3** before the transition to Bahamut you can immediately generate LB3 back with proper timing. You'll want to not have any HP regeneration effects on the party and take the proximity KB without any mitigation. This should leave the party around 20% HP.  
     The tanks can time their **LB3** to apply the damage reduction as the party gets knocked back, so all instances of damage after the knockback will have 80% mitigation from Tank LB3. Have your SGE/SCH shield and use Kerachole/Soil, each of the small pulses will generate 9,000 LB units (non-Tanks will survive lethal damage), then the final hit should generate 12,000 LB units (all players will survive lethal damage), successfully generating the full 30,000 units required for LB3.  
     **Note:** Shields should be reapplied as they're depleted after the knockback. As the final hit does more damage, ensure you reapply shields for it *and* use a small burst heal (Ixochole, or a single GCD heal) before the final hit to make sure everyone lives the combined damage of all the hits. 
+
+<Notification title="LB3 Transition Example" type="primary">
+    <TwitchClip 
+        url="https://clips.twitch.tv/embed?clip=EnjoyableFunnyShallotPlanking-1STdtt6IbxdpSqfI"
+        allowFullscreen>
+    </TwitchClip>
+</Notification>
 
 - **Gigaflares** - If the party does not have LB3 you can opt to refrain from using targeted mitigation on Bahamut's gigaflare casts.  
     Gigaflare roughly does 18,000 damage unmitigated to non-tank players, so ensure that you have full HP, shields and at least 10% party mitigation to keep everyone alive while taking critical damage. If all 6 non-tanks take lethal damage, 9,000 LB units will be generated.  
