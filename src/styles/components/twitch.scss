@@ -1,0 +1,10 @@
+.twitch-clip {
+  max-width: 1280px;
+  height: 100%;
+
+  iframe {
+    width: 100%;
+    height: auto !important;
+    @apply aspect-video;
+  }
+}
