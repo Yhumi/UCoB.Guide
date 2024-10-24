@@ -1,0 +1,28 @@
+---
+export interface Props extends astroHTML.JSX.HTMLAttributes {
+	url: string;
+	height?: string;
+	width?: string;
+	allowFullscreen?: boolean;
+}
+
+const {
+	url,
+	height = "100%",
+	width = "100%",
+	allowFullscreen = false,
+	...attrs
+} = Astro.props as Props;
+
+const site = new URL(Astro.url).hostname
+const finalUrl = url + "&parent=" + site;
+---
+
+<div class="twitch-clip">
+	<iframe
+		src={finalUrl}
+		height={height}
+		width={height}
+		allowfullscreen={allowFullscreen}>
+	</iframe>
+</div>
