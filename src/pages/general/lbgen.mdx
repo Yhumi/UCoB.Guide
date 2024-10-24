@@ -7,20 +7,81 @@ show_toc: false
 
 import Notification from '@/components/mdx/Notification.astro'
 
-## Understanding LB3 Generation
+## Understanding Active LB Generation
 
-<Notification title="LB Generation Cheatsheet">
-  [A visual guide](https://imgur.com/a/lb-gen-FNTZDGV) is available showing the fundamentals of limit break generation.
+<Notification title="LB Gen tl;dr">
+    Each bar of LB is 10000 LB units.  
+    **Surviving Lethal Damage** generates 1500 units per player (in a full party).  
+    **Critical Health Recovery** generates 600 units per player (in a full party).  
+    **Passive LB Generation** generates 220 units per tick without penalties.[^1]
+
+    [A visual guide](https://imgur.com/a/lb-gen-FNTZDGV) is available showing the fundamentals of active limit break generation.
 </Notification>
 
-Need to write this..
+Active LB generation is primarily achieved in one of two ways, **Surviving Lethal Damage** and **Critical Health Recovery**, both of which have a large gain on LB in pre-Shadowbringers content, 
+allowing for LB to be generated easily through proper planning.
+
+A single bar of limit break is worth 10,000 LB units, meaning LB3 requires 30,000 units to be generated.  
+Passively the party gains 220 per tick without penalties.[^1] Critical health recovery will generate 200 units per LB bar (600 total in a full party) per player, 
+and surviving lethal damage will generate 500 units per bar (1500 total in a full party) per player.[^2]
+As this has no effective cooldown, these two methods are an effective strategy to quickly build LB gauge to aid in the fight.
+
+### Surviving Lethal Damage
+LB is generated when a player survives damage that otherwise would have killed them due to **on-player** mitigation or shields.
+
+A way to think about this is that if a player has 1000 HP, and a boss' raw attack would do 1200 damage, 20% mitigation on the player would lead to them only taking 960 HP damage, causing them to live on 40 HP and 1500 units of LB would be generated from this player's survival.  
+However, if 20% targeted mitigation is used on the boss, the outgoing attack damage is reduced instead by the same amount, meaning the attack only deals 960 HP of damage which is non-lethal to the player.
+
+In both cases the player survives on 40 HP, however only the case where the damage outgoing from the source is lethal to the player generates LB.
+
+### Critical Health Recovery
+The game considers a player at "Critical" health if their HP is less than or equal to 10% of their maximum HP. If a player at critical health receives a direct heal LB generation occurs.
+
+{/*
+
+## TODO
+Twintania:
+- How much damage do fireballs do with x players. 
+- What general mitigation is required to live subsequent 5 or 6 stacks for LB purposes.
+
+Bahamut:
+- Check damage and mit values
+- Mention tanks being able to generate 1500 units from flatten?
+
+*/}
 
 ## LB Generation in UCoB
+<Notification title="UCoB LB Gen tl;dr">
+    Five people in first fireball of Twintania phase.  
+    **If your party has LB3 for Bahamut transition** you can leave the party low-HP after the knockback and LB3 + some shields/mit will regenerate a lot of LB.  
+    Avoid targeted mit on Gigaflare casts if LB3 is needed.  
+    Optionally take Flare Breaths as a party with full HP, shields and 10% mitigation if absolutely necessary.
+</Notification>
 
-TODO: Write out LB3 gen tips such as flare breathing the party maybe???
-- First Fireball stack
-- Not overhealing during Bahamut transition **with LB3** (I feel we have to emphasise that or people will die)
-- Pre-heavensfall LB gen with flare breath if necessary
-- If LB3 is used during HFT:
-  - How to recover LB by avoiding the use of targeted mits on gigaflares
-  - Flarebreath the party before Octet if needed too
+### Twintania
+- **First fireball stack** - It is general practice that the first fireball stack in Twintania is taken by 5 players with only shields and party mitigation. On NA both tanks and one of the healers will stay out of the stack. When done correctly, this generates 7500 units (3/4 of a bar) at the start of the fight, almost guaranteeing LB2 before the transition to P3.
+
+- **Other fireball stacks** - If your party is struggling, for any reason, to generate LB2 before P3 transition it is possible, with correct planning, to take any subsequent fireballs after the first with less party members and proper party mitigation to generate LB via surviving lethal damage.
+
+### Bahamut
+- **Bahamut transition** (with **LB3**) - If the party has **LB3** before the transition to Bahamut you can immediately generate LB3 back with proper timing. You'll want to not have any HP regeneration effects on the party and take the proximity KB without any mitigation. This should leave the party around 20% HP.
+    The tanks can time their **LB3** to apply the damage reduction after the first hit, so all subsequent hits will have 80% mitigation from Tank LB3. Have your SGE/SCH shield and use Kerachole/Soil, each of the small pulses will generate 9,000 LB units (non-Tanks will survive lethal damage), then the final hit should generate 12,000 LB units (all players will survive lethal damage), successfully generating the full 30,000 units required for LB3.  
+    **Note:** As the final hit does more damage, ensure you reapply shields and use a small burst heal (Ixochole, or a single GCD heal) before the final hit to make sure everyone lives the combined damage of all the hits.
+
+- **Gigaflares** - If the party does not have LB3 you can opt to refrain from using targeted mitigation on Bahamut's gigaflare casts.  
+    Gigaflare roughly does 18,000 damage unmitigated to non-tank players, so ensure that you have full HP, shields and 20% party mitigation to keep everyone alive while taking critical damage. If all 6 non-tanks take lethal damage, 9,000 LB units will be generated.  
+    This can be incredibly effective if LB3 is used to survive Hevensfall Trio, you can generate 18,000 LB units from Gigaflares alone post-Heavensfall, effectively guaranteeing LB2 at least for Octet. 
+
+- **Flare Breaths** - If **necessary** the party can survive damage done by the flare breath from bahamut with full HP, shields and at least 10% party mitigation.  
+    It is recommended to do this if the party does not have LB3 before Heavensfall Trio and might need the tank LB3 in order to progress as it can save players with good timing (before the knockback) if a tower is missed.  
+    If LB3 is used before Grand Octet, you can use the flare breath right before Grand Octet to generate 9,000 LB units before the mechanic.
+
+---
+
+[^1]: Penalties for passive LB generation include:
+    - Number of duplicate jobs
+    - Number of non-standard compositions where a standard composition is 2 tanks, 2 healers and 4 DPS.
+
+    Passive generation numbers per penalty, starting at 0 penalties: 220 > 170 > 160 > 154 > 144 > 140
+
+[^2]: These numbers are for pre-Shadowbringers content only and are reduced drastically in content from Shadowbringers or later.
