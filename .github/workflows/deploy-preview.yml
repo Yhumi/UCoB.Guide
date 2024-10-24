@@ -31,5 +31,5 @@ jobs:
             cd ucob-guide-preview/
             git fetch origin && git reset --hard origin/preview
             yarn install
-            yarn build
+            yarn build --site https://preview.ucob.guide/
             rsync -r dist/ ${{ vars.SITE_DIR_PREVIEW }}
