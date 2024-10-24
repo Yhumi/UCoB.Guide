@@ -41,3 +41,7 @@
 .grid-col-12 {
   @apply grid-cols-12;
 }
+
+.grid-lg-col-2 {
+  @apply lg:grid-cols-2;
+}
