@@ -14,8 +14,8 @@ const {
 	...attrs
 } = Astro.props as Props;
 
-const site = new URL(Astro.url).hostname
-const finalUrl = url + "&parent=" + site;
+const site = Astro.site ?? Astro.url 
+const finalUrl = url + "&parent=" + (site?.hostname ?? "localhost");
 ---
 
 <div class="twitch-clip">
