@@ -31,5 +31,5 @@ jobs:
             cd ucob-guide/
             git fetch origin && git reset --hard origin/main
             yarn install
-            yarn build
+            yarn build --site https://ucob.guide/
             rsync -r dist/ ${{ vars.SITE_DIR }}
