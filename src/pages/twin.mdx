@@ -7,7 +7,7 @@ show_toc: false
 
 import Notification from '@/components/mdx/Notification.astro'
 import Button from '@/components/mdx/Button.astro'
-import BuffDebuff from '@/components/mdx/BuffDebuff.astro'
+import Status from '@/components/mdx/Status.astro'
 import Card from '@/components/mdx/Card.astro'
 import NASpecific from '@/components/mdx/NASpecific.astro'
 import { YouTube } from 'astro-embed'
@@ -54,7 +54,7 @@ These HP thresholds are:
 <ImageWrapperSquare img={neurolinkpuddle} alt="Neurolink puddle" classdiv="mt-8"/>
 **Neurolink** - Small puddle that is dropped under the center of Twintania's hitbox
 upon hitting a HP threshold  
-When a player steps into the Neurolink, the player gets a <BuffDebuff
+When a player steps into the Neurolink, the player gets a <Status
 name="Neurolink" img={neurolink} /> debuff, which reduces damage done by
 approximately 90% and healing done by approximately 10%. This debuff will be
 required to resolve the **Generate** mechanic explained later in this page.  
@@ -103,9 +103,9 @@ party) will stay out of this initial stack. Subsequent Fireball stacks should be
 stacked with as many people as possible.[^1]
   
 - **Death Sentence** - Tankbuster (Forced tankswap) which inflicts
-a <BuffDebuff name="Slashing Resistance Down II" img={slashing} /> on the target  
+a <Status name="Slashing Resistance Down II" img={slashing} /> on the target  
 Forced swap as Twintania's autos are slashing type. If the player that currently
-has the <BuffDebuff name="Slashing Resistance Down II" img={slashing} /> takes
+has the <Status name="Slashing Resistance Down II" img={slashing} /> takes
 an auto, they will take lethal damage.  
 
 Most parties will usually hit the next HP threshold after the Death Sentence or
@@ -125,7 +125,7 @@ Most parties will usually hit the next HP threshold after the Death Sentence or
 
 - **Liquid Hells** - A set of 5x puddles, baited sequentially on the targeted
   player  
-Each puddle is a moderately-sized circle which applies <BuffDebuff name="Burns"img={burns} />,
+Each puddle is a moderately-sized circle which applies <Status name="Burns"img={burns} />,
 a lethal DoT, to any players who stand in the puddle for too long.  
 The targeted player is any single player that has a distance of at least 10
 yalms from the boss. If there are multiple valid targets, a random player within
@@ -139,15 +139,15 @@ An orb is also referred to as a **Hatch**. *In this phase*, only DPS players can
 get marked for a Hatch. The number of players marked is determined by the number
 of Neurolinks that are currently on the arena.  
 When an orb is intercepted, the orb will explode and deal lethal damage to
-players in the immediate vicinity who do not have the <BuffDebuff name="Neurolink" img={neurolink} />
+players in the immediate vicinity who do not have the <Status name="Neurolink" img={neurolink} />
 debuff, attained from standing in a Neurolink. The people in the vicinity of the
-explosion who survive will get <BuffDebuff name="Mana Hypersensitivity" img={manahyper} />
+explosion who survive will get <Status name="Mana Hypersensitivity" img={manahyper} />
 for 16 seconds, making any Hatch-related damage lethal during the duration of
-the debuff with or without the <BuffDebuff name="Neurolink" img={neurolink} />
+the debuff with or without the <Status name="Neurolink" img={neurolink} />
 debuff.   
 If the person who intercepted the orb dies, usually when they do not have the
-<BuffDebuff name="Neurolink" img={neurolink} />, the orb will further explode,
-dealing lethal raidwide damage and applying <BuffDebuff name="Damage Down"
+<Status name="Neurolink" img={neurolink} />, the orb will further explode,
+dealing lethal raidwide damage and applying <Status name="Damage Down"
 img={damagedown} /> to any surviving players. The same result will occur when
 nobody intercepts the orb when 10 seconds have passed since the end of the
 Generate cast.  
@@ -195,7 +195,7 @@ shield or mitigation.
 ### DPS
 #### Hatches
 <ImageWrapperSquare img={hatchresolve} alt="Hatch resolution from the side" />
-Since the <BuffDebuff name="Neurolink" img={neurolink} /> debuff reduces damage
+Since the <Status name="Neurolink" img={neurolink} /> debuff reduces damage
 done by the player, minimizing the amount of time spent in the Neurolink to
 resolve Hatches is ideal. However, due to the way snapshots and latency work, it
 is recommended to **walk into the Neurolink from the side** instead of walking
